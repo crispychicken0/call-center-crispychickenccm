@@ -1,0 +1,19 @@
+{
+  "offer_active": true,
+  "title_ar": "🔥 عرض الباكت العائلي",
+  "title_en": "🔥 Family Bucket Offer",
+  "description_ar": "احصل على خصم 10% عند طلبك اليوم بقيمة أكثر من 40 درهم!",
+  "description_en": "Get 10% OFF when your order is above AED 40 today!",
+  "discount_percent": 10,
+  "min_order_aed": 40,
+  "hotline": "600527488",
+  "mobile": "0501882206",
+  "whatsapp_e164": "+971501882206",
+  "email": "kenawe@crispychicken.rest",
+  "social": {
+    "facebook": "https://www.facebook.com/crispychickenae/",
+    "instagram": "https://www.instagram.com/crispychickenae/?hl=en",
+    "tiktok": "https://www.tiktok.com/channel/Crispy-chicken?lang=en",
+    "x": "https://twitter.com/search?q=%23crispychicken&src=hashtag_click"
+  }
+}

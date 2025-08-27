@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crispy Chicken Offers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="assets/logo.svg" />
+</head>
+<body class="bg-zinc-50 text-zinc-900">
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.svg" class="w-8 h-8" alt="Logo">
+        <h1 class="text-xl font-semibold">Crispy Chicken – Offers</h1>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="langAr" class="px-3 py-1 rounded-xl border">العربية</button>
+        <button id="langEn" class="px-3 py-1 rounded-xl border">English</button>
+        <a href="admin.html" class="ml-2 px-3 py-1 rounded-xl bg-black text-white">Admin</a>
+      </div>
+    </div>
+    <div id="contactBar" class="border-t">
+      <!-- Filled by JS -->
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto p-4">
+    <section class="mb-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div class="col-span-2 flex flex-wrap gap-2 items-center">
+        <span class="text-sm opacity-70" id="dateLabel"></span>
+        <span class="text-sm px-2 py-1 rounded-full bg-zinc-200" id="activeCount"></span>
+      </div>
+      <div class="flex justify-end gap-2">
+        <select id="filterStatus" class="px-3 py-2 rounded-xl border bg-white">
+          <option value="all">All / الكل</option>
+          <option value="active">Active / ساري</option>
+          <option value="upcoming">Upcoming / قادم</option>
+          <option value="expired">Expired / منتهي</option>
+        </select>
+        <input id="search" placeholder="Search / بحث" class="px-3 py-2 rounded-xl border bg-white" />
+      </div>
+    </section>
+    <section id="offersGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></section>
+  </main>
+
+  <div id="floatingContacts" class="fixed bottom-4 right-4 flex flex-col gap-2 z-30"></div>
+
+  <footer class="max-w-6xl mx-auto p-4 text-sm text-zinc-500">
+    © <span id="year"></span> Crispy Chicken. All rights reserved.
+  </footer>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>

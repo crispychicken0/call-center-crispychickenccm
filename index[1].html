@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crispy Chicken UAE – عروض اليوم | Today’s Deals</title>
+  <link rel="icon" href="/public/assets/favicon.png" type="image/png" />
+  <meta name="description" content="Crispy Chicken UAE – عروض اليوم وخصم 10% على الطلبات فوق 40 درهم. Hotline 600527488 | WhatsApp 0501882206" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Crispy Chicken UAE – Today’s Deals" />
+  <meta property="og:description" content="Order today and save 10% on bills over AED 40. Fast delivery. Hotline 600527488 | WhatsApp 0501882206." />
+  <meta property="og:image" content="/public/assets/og-crispy-chicken-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Crispy Chicken UAE – Today’s Deals" />
+  <meta name="twitter:description" content="Get 10% OFF on orders over AED 40. Fast delivery." />
+  <meta name="twitter:image" content="/public/assets/og-crispy-chicken-1200x630.png" />
+  <style>
+    :root { --bg:#7b1b1b; --bg2:#641616; --brand:#f1b24a; --text:#fff; --radius:18px; --shadow:0 10px 20px rgba(0,0,0,.15); }
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,system-ui,-apple-system,sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
+    .container{max-width:1100px;margin:auto;padding:24px}
+    header,footer{display:flex;justify-content:space-between;align-items:center;padding:16px;border-radius:var(--radius);background:rgba(255,255,255,.06);box-shadow:var(--shadow);gap:10px;flex-wrap:wrap}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800}
+    .logo img{height:60px}
+    .chip{background:rgba(255,255,255,.1);padding:8px 12px;border-radius:999px;cursor:pointer;text-decoration:none;color:inherit;border:1px solid #ffffff22}
+    .chip:hover{background:var(--brand);color:#000}
+    .hero{text-align:center;padding:40px 20px}
+    h1{color:var(--brand)}
+    .btn{display:inline-block;padding:12px 20px;margin:10px;border-radius:12px;font-weight:700;cursor:pointer;text-decoration:none;border:2px solid transparent}
+    .btn-primary{background:var(--brand);color:#000}
+    .btn-outline{border-color:var(--brand);color:var(--brand);background:transparent}
+    .btn-outline:hover{background:var(--brand);color:#000}
+    section{margin:30px 0;padding:20px;border-radius:var(--radius);background:rgba(255,255,255,.06);box-shadow:var(--shadow)}
+    form{display:grid;gap:12px;max-width:520px;margin:auto}
+    input,textarea,select{padding:12px;border-radius:10px;border:none} input:focus,textarea:focus,select:focus{outline:2px solid var(--brand)}
+    .hidden{display:none}
+    .social-links{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .lang-toggle{display:flex;gap:8px}
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">
+      <img src="/public/assets/logo.png" alt="Crispy Chicken Logo" onerror="this.src='/public/assets/favicon.png'"/>
+      <span>Crispy Chicken UAE</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="chip" onclick="setLang('ar')">🇦🇪 عربي</button>
+      <button class="chip" onclick="setLang('en')">🇬🇧 English</button>
+      <a class="chip" href="/admin">🔐 Admin</a>
+    </div>
+    <div>
+      <a class="chip" href="tel:" id="hotlineChip">☎️ ...</a>
+      <a class="chip" target="_blank" id="waChip">📲 WhatsApp</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1 id="offerTitle">...</h1>
+    <p id="offerDesc">...</p>
+    <div id="countdown" class="chip">⏳ ينتهي العرض خلال: --:--:--</div>
+    <div>
+      <a class="btn btn-primary" onclick="openOrder()">اطلب الآن | Order Now</a>
+      <a class="btn btn-outline" href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <section>
+    <h2 data-i18n-ar="🚚 خدمة التوصيل" data-i18n-en="🚚 Delivery Service">🚚 خدمة التوصيل</h2>
+    <p data-i18n-ar="اطلب وجبتك المفضلة بسهولة وسرعة عبر الاتصال أو الواتساب."
+       data-i18n-en="Order your favorite meal quickly via call or WhatsApp.">
+      ...
+    </p>
+    <a class="btn btn-outline" id="callBtn">اتصال | Call</a>
+    <a class="btn btn-primary" id="waBtn">واتساب | WhatsApp</a>
+  </section>
+
+  <section id="contact">
+    <h2 data-i18n-ar="📩 الشكاوى والاقتراحات" data-i18n-en="📩 Complaints & Suggestions">...</h2>
+    <form id="contactForm">
+      <input type="hidden" name="_language" id="langField" value="ar">
+      <input type="text" name="name" id="name" placeholder="الاسم الكامل | Full Name" required>
+      <input type="tel" name="phone" id="phone" placeholder="رقم الهاتف | Phone Number" required>
+      <select name="type" id="type">
+        <option value="order">طلب | Order</option>
+        <option value="complaint">شكوى | Complaint</option>
+        <option value="suggestion">اقتراح | Suggestion</option>
+      </select>
+      <textarea name="message" id="message" placeholder="اكتب تفاصيل الرسالة هنا... | Write your message here..." required></textarea>
+      <button type="submit" class="btn btn-primary">إرسال | Send</button>
+      <small id="formNote" style="opacity:.8"></small>
+    </form>
+    <p id="feedbackMsg" class="hidden">✅ شكراً لك! تم إرسال رسالتك. | Thank you! Your message has been sent.</p>
+  </section>
+
+  <footer>
+    <div>© 2025 Crispy Chicken UAE – جميع الحقوق محفوظة</div>
+    <div class="social-links">
+      <a class="chip" target="_blank" id="fbLink">Facebook</a>
+      <a class="chip" target="_blank" id="igLink">Instagram</a>
+      <a class="chip" target="_blank" id="ttLink">TikTok</a>
+      <a class="chip" target="_blank" id="xLink">X (Twitter)</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  let currentLang = 'ar';
+  const $ = (sel)=>document.querySelector(sel);
+
+  async function loadOffers(){
+    try{
+      const res = await fetch('/data/offers.json', {cache:'no-store'});
+      const data = await res.json();
+      window.OFFERS = data;
+      applyOffers();
+    }catch(e){
+      console.warn('Failed to load offers.json, using defaults', e);
+      window.OFFERS = {
+        title_ar:'🔥 عرض الباكت العائلي',
+        description_ar:'احصل على خصم 10% عند طلبك اليوم بقيمة أكثر من 40 درهم!',
+        title_en:"🔥 Family Bucket Offer",
+        description_en:"Get 10% OFF when your order is above AED 40 today!",
+        discount_percent:10, min_order_aed:40,
+        hotline:'600527488', mobile:'0501882206', whatsapp_e164:'+971501882206',
+        social:{facebook:'#', instagram:'#', tiktok:'#', x:'#'}
+      };
+      applyOffers();
+    }
+  }
+
+  function applyOffers(){
+    const o = window.OFFERS;
+    $('#offerTitle').textContent = currentLang==='ar' ? o.title_ar : o.title_en;
+    $('#offerDesc').textContent  = currentLang==='ar' ? o.description_ar : o.description_en;
+    $('#hotlineChip').href = 'tel:' + (o.hotline||'');
+    $('#hotlineChip').textContent = '☎️ ' + (o.hotline||'');
+    $('#waChip').href = 'https://wa.me/' + (o.whatsapp_e164||'971501882206');
+    $('#callBtn').href = 'tel:' + (o.hotline||'');
+    $('#waBtn').href = 'https://wa.me/' + (o.whatsapp_e164||'971501882206');
+    $('#fbLink').href = o.social?.facebook || '#';
+    $('#igLink').href = o.social?.instagram || '#';
+    $('#ttLink').href = o.social?.tiktok || '#';
+    $('#xLink').href  = o.social?.x || '#';
+
+    document.querySelectorAll('[data-i18n-ar]').forEach(el=>{
+      el.textContent = currentLang==='ar' ? el.getAttribute('data-i18n-ar') : el.getAttribute('data-i18n-en');
+    });
+    $('#langField').value = currentLang;
+    document.documentElement.lang = currentLang==='ar'?'ar':'en';
+    document.documentElement.dir  = currentLang==='ar'?'rtl':'ltr';
+  }
+
+  function setLang(lang){ currentLang = lang; applyOffers(); }
+
+  function openOrder(){
+    const o = window.OFFERS;
+    window.open('https://wa.me/' + (o.whatsapp_e164||'971501882206'),'_blank');
+  }
+
+  function tick(){
+    const now = new Date();
+    const end = new Date(); end.setHours(23,59,59,999);
+    const diff = Math.max(0, end - now);
+    const h = String(Math.floor(diff/3.6e6)).padStart(2,'0');
+    const m = String(Math.floor(diff%3.6e6/6e4)).padStart(2,'0');
+    const s = String(Math.floor(diff%6e4/1e3)).padStart(2,'0');
+    $('#countdown').textContent = (currentLang==='ar'?'⏳ ينتهي العرض خلال: ':'⏳ Deal ends in: ') + `${h}:${m}:${s}`;
+  }
+  setInterval(tick,1000);
+
+  // Email config (fill to enable EmailJS; otherwise Formspree fallback below)
+  const EMAILJS_PUBLIC_KEY = '';   // e.g. 'xYZ123...'
+  const EMAILJS_SERVICE_ID = '';   // e.g. 'service_abc'
+  const EMAILJS_TEMPLATE_ID= '';   // e.g. 'template_xyz'
+
+  $('#formNote').innerText = (EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID)
+    ? 'Secure email via EmailJS enabled.'
+    : 'Formspree fallback: set FORMSPREE_ENDPOINT in code.';
+
+  $('#contactForm').addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const form = e.target;
+    const data = Object.fromEntries(new FormData(form).entries());
+    data.lang = currentLang;
+    data.email_to = (window.OFFERS && window.OFFERS.email) ? window.OFFERS.email : 'kenawe@crispychicken.rest';
+
+    if(EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID){
+      try{
+        if(!window.emailjs){
+          const s=document.createElement('script');
+          s.src='https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js';
+          document.head.appendChild(s);
+          await new Promise(r=>s.onload=r);
+          window.emailjs.init(EMAILJS_PUBLIC_KEY);
+        }
+        await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data);
+        $('#feedbackMsg').classList.remove('hidden');
+        form.reset();
+      }catch(err){
+        alert('EmailJS error, falling back to mailto. Configure keys to enable secure send.');
+        window.location.href = `mailto:${data.email_to}?subject=Website%20Contact&body=${encodeURIComponent(JSON.stringify(data,null,2))}`;
+      }
+    } else {
+      try{
+        const FORMSPREE_ENDPOINT = ''; // e.g. https://formspree.io/f/xxxxxx
+        if(!FORMSPREE_ENDPOINT){ throw new Error('No Formspree endpoint set'); }
+        await fetch(FORMSPREE_ENDPOINT, { method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form)});
+        $('#feedbackMsg').classList.remove('hidden');
+        form.reset();
+      }catch(err){
+        window.location.href = `mailto:${data.email_to}?subject=Website%20Contact&body=${encodeURIComponent(JSON.stringify(data,null,2))}`;
+      }
+    }
+  });
+
+  loadOffers(); tick();
+</script>
+</body>
+</html>
