@@ -5,45 +5,368 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Crispy Chicken UAE – عروض اليوم | Today’s Deals</title>
   <link rel="icon" href="/public/assets/favicon.png" type="image/png" />
-  <meta name="description" content="Crispy Chicken UAE – عروض اليوم وخصم 10% على الطلبات فوق 40 درهم. Hotline 600527488 | WhatsApp 0501882206" />
+  <meta name="description" content="Crispy Chicken UAE – عروض اليوم وخصم 10% على الطلبات فوق 40 درهم. Ultimate Offer: 12 قطعة دجاج + 3 صلصة ثوم بسعر 30 درهم!" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Crispy Chicken UAE – Today’s Deals" />
-  <meta property="og:description" content="Order today and save 10% on bills over AED 40. Fast delivery. Hotline 600527488 | WhatsApp 0501882206." />
+  <meta property="og:description" content="Order today and save 10% on bills over AED 40. Ultimate Offer: 12 Chicken Pieces + 3 Garlic Sauces for AED 30!" />
   <meta property="og:image" content="/public/assets/og-crispy-chicken-1200x630.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Crispy Chicken UAE – Today’s Deals" />
-  <meta name="twitter:description" content="Get 10% OFF on orders over AED 40. Fast delivery." />
+  <meta name="twitter:description" content="Get 10% OFF on orders over AED 40. Ultimate Offer: 12 Chicken Pieces + 3 Garlic Sauces for AED 30!" />
   <meta name="twitter:image" content="/public/assets/og-crispy-chicken-1200x630.png" />
   <style>
-    :root { --bg:#7b1b1b; --bg2:#641616; --brand:#f1b24a; --text:#fff; --radius:18px; --shadow:0 10px 20px rgba(0,0,0,.15); }
-    *{box-sizing:border-box} body{margin:0;font-family:Arial,system-ui,-apple-system,sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
-    .container{max-width:1100px;margin:auto;padding:24px}
-    header,footer{display:flex;justify-content:space-between;align-items:center;padding:16px;border-radius:var(--radius);background:rgba(255,255,255,.06);box-shadow:var(--shadow);gap:10px;flex-wrap:wrap}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:800}
-    .logo img{height:60px}
-    .chip{background:rgba(255,255,255,.1);padding:8px 12px;border-radius:999px;cursor:pointer;text-decoration:none;color:inherit;border:1px solid #ffffff22}
-    .chip:hover{background:var(--brand);color:#000}
-    .hero{text-align:center;padding:40px 20px}
-    h1{color:var(--brand)}
-    .btn{display:inline-block;padding:12px 20px;margin:10px;border-radius:12px;font-weight:700;cursor:pointer;text-decoration:none;border:2px solid transparent}
-    .btn-primary{background:var(--brand);color:#000}
-    .btn-outline{border-color:var(--brand);color:var(--brand);background:transparent}
-    .btn-outline:hover{background:var(--brand);color:#000}
-    section{margin:30px 0;padding:20px;border-radius:var(--radius);background:rgba(255,255,255,.06);box-shadow:var(--shadow)}
-    form{display:grid;gap:12px;max-width:520px;margin:auto}
-    input,textarea,select{padding:12px;border-radius:10px;border:none} input:focus,textarea:focus,select:focus{outline:2px solid var(--brand)}
+    :root { 
+      --primary: #FF6B35;
+      --secondary: #F7931E;
+      --accent: #FFD23F;
+      --dark: #2C1810;
+      --light: #FFF8F3;
+      --radius: 20px;
+      --shadow: 0 15px 30px rgba(0,0,0,0.2);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    *{box-sizing:border-box} 
+    body{ 
+      margin:0; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--dark) 0%, #3D2817 100%);
+      color: var(--light);
+      min-height:100vh;
+      overflow-x: hidden;
+    }
+    
+    .container{ 
+      max-width:1200px; 
+      margin:auto; 
+      padding:24px;
+      position: relative;
+    }
+    
+    header,footer{ 
+      display:flex; 
+      justify-content:space-between; 
+      align-items:center; 
+      padding:20px; 
+      border-radius:var(--radius); 
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      gap:20px; 
+      flex-wrap:wrap;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .logo{ 
+      display:flex; 
+      align-items:center; 
+      gap:16px; 
+      font-weight:800;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .logo img{ 
+      height:70px;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+      transition: var(--transition);
+    }
+    
+    .logo:hover img {
+      transform: scale(1.1);
+    }
+    
+    .logo span {
+      font-size: 1.5rem;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .chip{ 
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+      padding:10px 16px; 
+      border-radius:999px; 
+      cursor:pointer; 
+      text-decoration:none; 
+      color:inherit; 
+      border:1px solid rgba(255,255,255,0.2);
+      transition: var(--transition);
+      backdrop-filter: blur(5px);
+    }
+    
+    .chip:hover{ 
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255,107,53,0.3);
+    }
+    
+    .hero{ 
+      text-align:center; 
+      padding:50px 20px;
+      position: relative;
+      overflow: hidden;
+      margin: 30px 0;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(247,147,30,0.1) 100%);
+      backdrop-filter: blur(5px);
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,215,63,0.1) 0%, transparent 70%);
+      animation: rotate 30s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    h1{ 
+      color: var(--accent); 
+      font-size: 3rem; 
+      margin-bottom:1.5rem;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .btn{ 
+      display:inline-block; 
+      padding:14px 28px; 
+      margin:15px; 
+      border-radius:var(--radius); 
+      font-weight:700; 
+      cursor:pointer; 
+      text-decoration:none; 
+      border:2px solid transparent;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+    
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .btn-primary{ 
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--dark);
+      box-shadow: 0 5px 15px rgba(255,107,53,0.3);
+    }
+    
+    .btn-primary:hover{ 
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255,107,53,0.4);
+    }
+    
+    .btn-outline{ 
+      border-color: var(--accent); 
+      color: var(--accent); 
+      background: transparent;
+    }
+    
+    .btn-outline:hover{ 
+      background: var(--accent); 
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+    
+    section{ 
+      margin:40px 0; 
+      padding:30px; 
+      border-radius:var(--radius); 
+      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+      box-shadow: var(--shadow);
+      animation: fadeInUp 0.6s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    form{ 
+      display:grid; 
+      gap:20px; 
+      max-width:600px; 
+      margin:auto;
+    }
+    
+    input,textarea,select{ 
+      padding:16px; 
+      border-radius:15px; 
+      border:1px solid rgba(255,255,255,0.2);
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+      color: var(--light);
+      font-size: 16px;
+      transition: var(--transition);
+    }
+    
+    input:focus,textarea:focus,select:focus{ 
+      outline:2px solid var(--accent);
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%);
+      transform: translateY(-2px);
+    }
+    
     .hidden{display:none}
-    .social-links{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .lang-toggle{display:flex;gap:8px}
+    
+    .social-links{ 
+      display:flex; 
+      gap:15px; 
+      flex-wrap:wrap; 
+      align-items:center;
+    }
+    
+    .lang-toggle{ 
+      display:flex; 
+      gap:12px;
+    }
+    
+    #countdown{ 
+      font-size:1.5rem; 
+      font-weight:bold;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      padding: 15px 30px;
+      border-radius: 50px;
+      display: inline-block;
+      margin: 20px 0;
+      box-shadow: 0 5px 15px rgba(255,107,53,0.3);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Ultimate Offer Styles */
+    #ultimate-offer {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      border-radius: 25px;
+      padding: 40px;
+      margin: 50px 0;
+      text-align: center;
+      color: var(--light);
+      box-shadow: 0 20px 40px rgba(255,107,53,0.3);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+    
+    #ultimate-offer::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      animation: rotate 30s linear infinite;
+    }
+    
+    #ultimate-offer h2 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .offer-item {
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 25px;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .offer-item:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+    
+    .offer-value {
+      font-size: 3.5rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, var(--accent), var(--light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 15px;
+    }
+    
+    .offer-details {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    
+    .offer-days, .offer-dates {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+    
+    /* تحسينات للشاشات الصغيرة */
+    @media (max-width:768px){
+      h1{font-size:2.5rem}
+      .container{padding:20px}
+      header,footer{flex-direction:column;gap:20px}
+      .hero{padding:30px 20px}
+      section{padding:25px}
+      #ultimate-offer h2{font-size:2.5rem}
+      .offer-grid{grid-template-columns:1fr;gap:20px}
+      .offer-value{font-size:3rem}
+      .btn{padding:12px 24px; font-size:16px}
+    }
   </style>
 </head>
 <body>
 <div class="container">
   <header>
     <div class="logo">
-      <img src="/public/assets/logo.png" alt="Crispy Chicken Logo" onerror="this.src='/public/assets/favicon.png'"/>
+      <img src="/public/assets/logo.png" alt="Crispy Chicken Logo" loading="lazy" onerror="this.src='/public/assets/favicon.png'"/>
       <span>Crispy Chicken UAE</span>
     </div>
     <div class="lang-toggle">
@@ -56,17 +379,42 @@
       <a class="chip" target="_blank" id="waChip">📲 WhatsApp</a>
     </div>
   </header>
-
   <div class="hero">
     <h1 id="offerTitle">...</h1>
-    <p id="offerDesc">...</p>
-    <div id="countdown" class="chip">⏳ ينتهي العرض خلال: --:--:--</div>
-    <div>
+    <p id="offerDesc" style="font-size:1.3rem;margin-bottom:1.5rem;opacity:0.9">...</p>
+    <div id="countdown">⏳ ينتهي العرض خلال: --:--:--</div>
+    <div style="margin-top:2.5rem">
       <a class="btn btn-primary" onclick="openOrder()">اطلب الآن | Order Now</a>
       <a class="btn btn-outline" href="#contact">Contact</a>
     </div>
   </div>
-
+  
+  <!-- Ultimate Offer Section -->
+  <section id="ultimate-offer">
+    <h2 id="ultimate-offer-title">Ultimate Offer 🔥</h2>
+    <div class="offer-grid">
+      <div class="offer-item">
+        <div class="offer-value"><span id="ultimate-offer-value">30</span> درهم</div>
+        <p>قيمة العرض</p>
+      </div>
+      <div class="offer-item">
+        <div class="offer-details" id="ultimate-offer-details">12 قطعة دجاج + 3 صلصة ثوم</div>
+        <p>التفاصيل</p>
+      </div>
+      <div class="offer-item">
+        <div class="offer-days" id="ultimate-offer-days">الاثنين والثلاثاء</div>
+        <p>الأيام</p>
+      </div>
+      <div class="offer-item">
+        <div class="offer-dates" id="ultimate-offer-dates">01 و 02 سبتمبر</div>
+        <p>التاريخ</p>
+      </div>
+    </div>
+    <button class="btn btn-primary" style="font-size:1.5rem;padding:18px 50px;margin-top:30px;" onclick="openOrder()">
+      اطلب الآن
+    </button>
+  </section>
+  
   <section>
     <h2 data-i18n-ar="🚚 خدمة التوصيل" data-i18n-en="🚚 Delivery Service">🚚 خدمة التوصيل</h2>
     <p data-i18n-ar="اطلب وجبتك المفضلة بسهولة وسرعة عبر الاتصال أو الواتساب."
@@ -76,7 +424,7 @@
     <a class="btn btn-outline" id="callBtn">اتصال | Call</a>
     <a class="btn btn-primary" id="waBtn">واتساب | WhatsApp</a>
   </section>
-
+  
   <section id="contact">
     <h2 data-i18n-ar="📩 الشكاوى والاقتراحات" data-i18n-en="📩 Complaints & Suggestions">...</h2>
     <form id="contactForm">
@@ -94,7 +442,7 @@
     </form>
     <p id="feedbackMsg" class="hidden">✅ شكراً لك! تم إرسال رسالتك. | Thank you! Your message has been sent.</p>
   </section>
-
+  
   <footer>
     <div>© 2025 Crispy Chicken UAE – جميع الحقوق محفوظة</div>
     <div class="social-links">
@@ -105,32 +453,53 @@
     </div>
   </footer>
 </div>
-
 <script>
   let currentLang = 'ar';
   const $ = (sel)=>document.querySelector(sel);
-
+  
+  // تحميل العروض مع التخزين المؤقت
   async function loadOffers(){
     try{
-      const res = await fetch('/data/offers.json', {cache:'no-store'});
+      const cacheKey = 'crispy_offers';
+      const cached = localStorage.getItem(cacheKey);
+      
+      if(cached){
+        const data = JSON.parse(cached);
+        window.OFFERS = data;
+        applyOffers();
+      }
+      
+      const res = await fetch('/public/data/offers.json?'+Date.now(), {cache:'no-store'});
       const data = await res.json();
       window.OFFERS = data;
+      localStorage.setItem(cacheKey, JSON.stringify(data));
       applyOffers();
     }catch(e){
       console.warn('Failed to load offers.json, using defaults', e);
       window.OFFERS = {
-        title_ar:'🔥 عرض الباكت العائلي',
-        description_ar:'احصل على خصم 10% عند طلبك اليوم بقيمة أكثر من 40 درهم!',
-        title_en:"🔥 Family Bucket Offer",
-        description_en:"Get 10% OFF when your order is above AED 40 today!",
+        title_ar:'🔥 عروض Crispy Chicken',
+        description_ar:'خصومات رائعة على وجبات الدجاج الشهيرة!',
+        title_en:"🔥 Crispy Chicken Deals",
+        description_en:"Amazing discounts on our famous chicken meals!",
         discount_percent:10, min_order_aed:40,
         hotline:'600527488', mobile:'0501882206', whatsapp_e164:'+971501882206',
-        social:{facebook:'#', instagram:'#', tiktok:'#', x:'#'}
+        social:{facebook:'#', instagram:'#', tiktok:'#', x:'#'},
+        ultimate_offer: {
+          title_ar: "عرض Ultimate 🔥",
+          title_en: "Ultimate Offer 🔥",
+          value_aed: 30,
+          details_ar: "12 قطعة دجاج + 3 صلصة ثوم",
+          details_en: "12 Chicken Pieces + 3 Garlic Sauces",
+          days_ar: "الاثنين والثلاثاء",
+          days_en: "Monday and Tuesday",
+          dates_ar: "01 و 02 سبتمبر",
+          dates_en: "September 1st & 2nd"
+        }
       };
       applyOffers();
     }
   }
-
+  
   function applyOffers(){
     const o = window.OFFERS;
     $('#offerTitle').textContent = currentLang==='ar' ? o.title_ar : o.title_en;
@@ -144,7 +513,17 @@
     $('#igLink').href = o.social?.instagram || '#';
     $('#ttLink').href = o.social?.tiktok || '#';
     $('#xLink').href  = o.social?.x || '#';
-
+    
+    // تحديث معلومات العرض المميز
+    if (o.ultimate_offer) {
+      const ultimateOffer = o.ultimate_offer;
+      $('#ultimate-offer-title').textContent = currentLang==='ar' ? ultimateOffer.title_ar : ultimateOffer.title_en;
+      $('#ultimate-offer-value').textContent = ultimateOffer.value_aed;
+      $('#ultimate-offer-details').textContent = currentLang==='ar' ? ultimateOffer.details_ar : ultimateOffer.details_en;
+      $('#ultimate-offer-days').textContent = currentLang==='ar' ? ultimateOffer.days_ar : ultimateOffer.days_en;
+      $('#ultimate-offer-dates').textContent = currentLang==='ar' ? ultimateOffer.dates_ar : ultimateOffer.dates_en;
+    }
+    
     document.querySelectorAll('[data-i18n-ar]').forEach(el=>{
       el.textContent = currentLang==='ar' ? el.getAttribute('data-i18n-ar') : el.getAttribute('data-i18n-en');
     });
@@ -152,14 +531,19 @@
     document.documentElement.lang = currentLang==='ar'?'ar':'en';
     document.documentElement.dir  = currentLang==='ar'?'rtl':'ltr';
   }
-
-  function setLang(lang){ currentLang = lang; applyOffers(); }
-
+  
+  function setLang(lang){ 
+    currentLang = lang; 
+    applyOffers();
+    localStorage.setItem('crispy_lang', lang);
+  }
+  
   function openOrder(){
     const o = window.OFFERS;
     window.open('https://wa.me/' + (o.whatsapp_e164||'971501882206'),'_blank');
   }
-
+  
+  // تحسين العد التنازلي
   function tick(){
     const now = new Date();
     const end = new Date(); end.setHours(23,59,59,999);
@@ -169,54 +553,44 @@
     const s = String(Math.floor(diff%6e4/1e3)).padStart(2,'0');
     $('#countdown').textContent = (currentLang==='ar'?'⏳ ينتهي العرض خلال: ':'⏳ Deal ends in: ') + `${h}:${m}:${s}`;
   }
-  setInterval(tick,1000);
-
-  // Email config (fill to enable EmailJS; otherwise Formspree fallback below)
-  const EMAILJS_PUBLIC_KEY = '';   // e.g. 'xYZ123...'
-  const EMAILJS_SERVICE_ID = '';   // e.g. 'service_abc'
-  const EMAILJS_TEMPLATE_ID= '';   // e.g. 'template_xyz'
-
-  $('#formNote').innerText = (EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID)
-    ? 'Secure email via EmailJS enabled.'
-    : 'Formspree fallback: set FORMSPREE_ENDPOINT in code.';
-
+  
+  // إعداد نموذج الاتصال
   $('#contactForm').addEventListener('submit', async (e)=>{
     e.preventDefault();
     const form = e.target;
     const data = Object.fromEntries(new FormData(form).entries());
     data.lang = currentLang;
     data.email_to = (window.OFFERS && window.OFFERS.email) ? window.OFFERS.email : 'kenawe@crispychicken.rest';
-
-    if(EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID){
-      try{
-        if(!window.emailjs){
-          const s=document.createElement('script');
-          s.src='https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js';
-          document.head.appendChild(s);
-          await new Promise(r=>s.onload=r);
-          window.emailjs.init(EMAILJS_PUBLIC_KEY);
-        }
-        await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data);
+    
+    // إرسال البيانات
+    try{
+      const response = await fetch('https://formspree.io/f/your-form-id', {
+        method:'POST',
+        headers:{'Accept':'application/json'},
+        body:JSON.stringify(data)
+      });
+      
+      if(response.ok){
         $('#feedbackMsg').classList.remove('hidden');
         form.reset();
-      }catch(err){
-        alert('EmailJS error, falling back to mailto. Configure keys to enable secure send.');
-        window.location.href = `mailto:${data.email_to}?subject=Website%20Contact&body=${encodeURIComponent(JSON.stringify(data,null,2))}`;
+        setTimeout(() => $('#feedbackMsg').classList.add('hidden'), 5000);
+      } else {
+        throw new Error('Form submission failed');
       }
-    } else {
-      try{
-        const FORMSPREE_ENDPOINT = ''; // e.g. https://formspree.io/f/xxxxxx
-        if(!FORMSPREE_ENDPOINT){ throw new Error('No Formspree endpoint set'); }
-        await fetch(FORMSPREE_ENDPOINT, { method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form)});
-        $('#feedbackMsg').classList.remove('hidden');
-        form.reset();
-      }catch(err){
-        window.location.href = `mailto:${data.email_to}?subject=Website%20Contact&body=${encodeURIComponent(JSON.stringify(data,null,2))}`;
-      }
+    } catch(err) {
+      console.error('Form error:', err);
+      alert('حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى.');
     }
   });
-
-  loadOffers(); tick();
+  
+  // تهيئة الموقع
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('crispy_lang');
+    if(savedLang) setLang(savedLang);
+    loadOffers();
+    setInterval(tick, 1000);
+    tick(); // تشغيل العد التنازلي فوراً
+  });
 </script>
 </body>
 </html>
