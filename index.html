@@ -8,48 +8,70 @@
   <link rel="icon" href="assets/logo.svg" />
 </head>
 <body class="bg-zinc-50 text-zinc-900">
+  <!-- Header -->
   <header class="sticky top-0 z-20 bg-white/80 backdrop-blur border-b">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo and Title -->
       <div class="flex items-center gap-3">
-        <img src="assets/logo.svg" class="w-8 h-8" alt="Logo">
+        <img src="assets/logo.svg" class="w-8 h-8" alt="Logo" />
         <h1 class="text-xl font-semibold">Crispy Chicken – Offers</h1>
       </div>
+      <!-- Language buttons and Admin link -->
       <div class="flex items-center gap-2">
         <button id="langAr" class="px-3 py-1 rounded-xl border">العربية</button>
         <button id="langEn" class="px-3 py-1 rounded-xl border">English</button>
         <a href="admin.html" class="ml-2 px-3 py-1 rounded-xl bg-black text-white">Admin</a>
       </div>
     </div>
-    <div id="contactBar" class="border-t">
-      <!-- Filled by JS -->
+    <!-- Contact Bar (dynamic content) -->
+    <div id="contactBar" class="border-t px-4 py-2">
+      <!-- Filled dynamically via JS -->
     </div>
   </header>
 
+  <!-- Main Content -->
   <main class="max-w-6xl mx-auto p-4">
-    <section class="mb-4 grid grid-cols-1 md:grid-cols-3 gap-3">
-      <div class="col-span-2 flex flex-wrap gap-2 items-center">
+    <!-- Filters and Search -->
+    <section class="mb-4 grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
+      <div class="flex flex-wrap gap-2 items-center">
         <span class="text-sm opacity-70" id="dateLabel"></span>
         <span class="text-sm px-2 py-1 rounded-full bg-zinc-200" id="activeCount"></span>
       </div>
-      <div class="flex justify-end gap-2">
+      <div class="flex justify-end gap-2 col-span-2">
         <select id="filterStatus" class="px-3 py-2 rounded-xl border bg-white">
           <option value="all">All / الكل</option>
           <option value="active">Active / ساري</option>
           <option value="upcoming">Upcoming / قادم</option>
           <option value="expired">Expired / منتهي</option>
         </select>
-        <input id="search" placeholder="Search / بحث" class="px-3 py-2 rounded-xl border bg-white" />
+        <input
+          id="search"
+          placeholder="Search / بحث"
+          class="px-3 py-2 rounded-xl border bg-white"
+        />
       </div>
     </section>
-    <section id="offersGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></section>
+    <!-- Offers Grid -->
+    <section id="offersGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Offer cards will be dynamically inserted here -->
+    </section>
   </main>
 
-  <div id="floatingContacts" class="fixed bottom-4 right-4 flex flex-col gap-2 z-30"></div>
+  <!-- Floating Contacts (dynamic) -->
+  <div id="floatingContacts" class="fixed bottom-4 right-4 flex flex-col gap-2 z-30">
+    <!-- Contact buttons will be dynamically inserted here -->
+  </div>
 
+  <!-- Footer -->
   <footer class="max-w-6xl mx-auto p-4 text-sm text-zinc-500">
     © <span id="year"></span> Crispy Chicken. All rights reserved.
   </footer>
 
+  <!-- Scripts -->
   <script src="scripts/app.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
